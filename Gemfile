@@ -1,4 +1,4 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# gem "rails"
+gem 'rails', github: 'rails/rails'
+gem 'arel', github: 'rails/arel'
