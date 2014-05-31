@@ -1,2 +1,18 @@
-h1 Slides#index
-p Find me in app/views/slides/index.html.slim
+h1 Recent bookmarked slides
+
+table
+  thead
+    tr
+      th Site
+      th Title
+      th Author
+      th Bookmark
+      th Bookmarked at
+  tbody
+    - @slides.each do |slide|
+      tr
+        td= slide.site_name
+        td= link_to slide.title, slide.url
+        td= slide.author_name
+        td= slide.bookmarks_count
+        td= slide.bookmarked_at

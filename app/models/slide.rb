@@ -15,4 +15,8 @@ class Slide
       })
     end
   end
+
+  def site_name
+    self.class.name.sub('Slide::', '')
+  end
 end
