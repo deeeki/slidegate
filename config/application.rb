@@ -28,5 +28,11 @@ module Slidegate
     # config.i18n.default_locale = :de
 
     config.autoload_paths += ['lib']
+
+    config.generators do |g|
+      g.helper false
+      g.javascripts false
+      g.stylesheets false
+    end
   end
 end
