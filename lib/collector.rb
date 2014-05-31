@@ -18,5 +18,7 @@ class Collector
     slide = @model_class.new_from_entry(entry)
     slide.fetch
     slide.save
+  rescue Mechanize::ResponseCodeError => e
+    Rails.logger.error(e)
   end
 end
