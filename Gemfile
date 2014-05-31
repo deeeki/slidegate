@@ -13,6 +13,7 @@ gem 'jbuilder'
 gem 'mongoid', github: 'mongoid/mongoid', ref: 'f9e6fdb'
 gem 'mechanize'
 gem 'slim-rails'
+gem 'slideshare', github: 'deeeki/slideshare'
 
 group :development do
   gem 'spring'

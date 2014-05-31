@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/deeeki/slideshare.git
+  revision: 6bb9cbbc03a2f76ea2eae05f67de289eca348e07
+  specs:
+    slideshare (0.0.1)
+      activesupport
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: f9e6fdb1a67ce7a9e5e831c560aa203886ec0d1d
   ref: f9e6fdb
@@ -232,6 +239,7 @@ DEPENDENCIES
   rails!
   rails_12factor
   sass-rails!
+  slideshare!
   slim-rails
   spring
   sprockets-rails!
