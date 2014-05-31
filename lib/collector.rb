@@ -5,7 +5,7 @@ class Collector
   }
 
   def initialize site
-    @site_url, @model_class = SITES[site], Slide.const_get(site.capitalize)
+    @site_url, @model_class = SITES[site], "Slide::#{site.capitalize}".constantize
   end
 
   def collect options = {}
