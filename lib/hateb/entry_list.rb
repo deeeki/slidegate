@@ -18,16 +18,16 @@ module Hateb
         begin
           entries.concat(_fetch(url, offset))
           offset += PER
-        end while offset < max_offset && entries.last.eid >= since_eid
+        end while offset < max_offset && entries.last && entries.last.eid >= since_eid
         entries.take_while{|e| e.eid > since_eid }.take(limit)
       end
 
       private
 
       def _fetch url, offset = 0
-        request_url = "#{BASE_URL}?sort=eid&url=#{CGI.escape(url)}&of=#{offset}"
+        request_url = "#{BASE_URL}?sort=eid&layout=headline&url=#{CGI.escape(url)}&of=#{offset}"
         page = agent.get(request_url)
-        page.search('li.entry-unit').take(PER).map do |e|
+        page.search('li.entrylist-unit').take(PER).map do |e|
           Entry.new_from_element(e)
         end
       end
