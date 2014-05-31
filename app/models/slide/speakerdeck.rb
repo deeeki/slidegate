@@ -7,17 +7,6 @@ class Slide::Speakerdeck < Slide
     def valid_url? url
       url =~ /speakerdeck.com\/(u\/)?[^\/]{2,}\/(p\/)?[^\/]+$/ && url !~ /speakerdeck.com\/embed\//
     end
-
-    def new_from_entry entry
-      new({
-        eid: entry.eid,
-        title: entry.title,
-        url: entry.url,
-        bookmark_url: entry.bookmark_url,
-        bookmarked_at: entry.date,
-        bookmarks_count: entry.bookmark_count,
-      })
-    end
   end
 
   def fetch
