@@ -17,7 +17,7 @@ class Slide::Slideshare < Slide
       downloadable: api_slide.download == '1',
       author_id: api_slide.user_id,
       author_name: api_slide.username,
-      tags: api_slide.tags ? Array(api_slide.tags.tag) : [],
+      tags: api_slide.tags.kind_of?(Hash) ? Array(api_slide.tags.tag) : [],
     })
   end
 end
