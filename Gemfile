@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 gem 'rails', github: 'rails/rails'
 gem 'arel', github: 'rails/arel'
 gem 'sprockets-rails', github: 'rails/sprockets-rails'
