@@ -19,3 +19,13 @@ table
         td= slide.author_name
         td= slide.bookmarks_count
         td= slide.bookmarked_at
+
+.nav
+  - if @date
+    = daily_link_on(@date - 1.day)
+    |--
+    = daily_link_on(@date)
+    |--
+    = daily_link_on(@date + 1.day)
+  - else
+    = daily_link_on(Date.today)
