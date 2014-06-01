@@ -125,6 +125,9 @@ GEM
     exception_notification (4.0.1)
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
+    exception_notification-rake (0.1.2)
+      exception_notification (~> 4.0.1)
+      rake (>= 0.9.0)
     execjs (2.1.0)
     hike (1.2.3)
     hpricot (0.8.6)
@@ -233,7 +236,7 @@ DEPENDENCIES
   arel!
   coffee-rails!
   dotenv-rails
-  exception_notification
+  exception_notification-rake
   html2slim!
   jbuilder
   jquery-rails
