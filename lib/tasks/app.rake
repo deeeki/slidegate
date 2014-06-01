@@ -4,13 +4,16 @@ namespace :app do
     task all: [:slideshare, :speakerdeck]
 
     desc 'Collect from SlideShare'
-    task speakerdeck: :environment do
-      Collector.collect_from(:slideshare)
+    task slideshare: :environment do
+      Rails.application.eager_load! # to prevent `Slideshare` naming problem
+      eid = Slide::Slideshare.order(eid: :desc).first.try(:eid) || 0
+      Collector.new(:slideshare).collect(since_eid: eid)
     end
 
     desc 'Collect from Speakerdeck'
     task speakerdeck: :environment do
-      Collector.collect_from(:speakerdeck)
+      eid = Slide::Speakerdeck.order(eid: :desc).first.try(:eid) || 0
+      Collector.new(:speakerdeck).collect(since_eid: eid)
     end
   end
 
