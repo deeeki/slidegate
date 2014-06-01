@@ -3,6 +3,11 @@ class Slide
   include Mongoid::Attributes::Dynamic
   include Mongoid::Timestamps
 
+  scope :bookmarked_on, ->(on = Date.today){
+    from = on.to_time.beginning_of_day
+    where(:bookmarked_at.gte => from, :bookmarked_at.lte => from.end_of_day)
+  }
+
   class << self
     def new_from_entry entry
       new({
