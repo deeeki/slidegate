@@ -6,7 +6,7 @@ class Slide::Speakerdeck < Slide
 
     def valid_url? url
       return false if url.include?('sssslide.com')
-      url =~ /speakerdeck.com\/(u\/)?[^\/]{2,}\/(p\/)?[^\/]+$/ && url !~ /speakerdeck.com\/embed\//
+      url =~ /speakerdeck.com\/(u\/)?[^\/]{2,}\/(p\/)?[^\/]+$/ && url !~ /speakerdeck.com\/(embed|player)\//
     end
   end
 
