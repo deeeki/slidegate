@@ -1,4 +1,11 @@
 namespace :app do
+  task :hourly do # for heroku scheduler
+    Rake::Task['app:collect:all'].invoke
+    if (Time.now.hour % 4).zero?
+      Rake::Task['app:sync_bookmarks_counts'].invoke
+    end
+  end
+
   namespace :collect do
     desc 'Collect from SlideShare'
     task all: [:slideshare, :speakerdeck]
