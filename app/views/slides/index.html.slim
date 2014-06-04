@@ -11,6 +11,7 @@ table
       th Author
       th Bookmark
       th Bookmarked at
+      th Published at
   tbody
     - @slides.each do |slide|
       tr
@@ -18,7 +19,8 @@ table
         td= link_to slide.title, slide.url
         td= slide.author_name
         td= slide.bookmarks_count
-        td= slide.bookmarked_at
+        td= l(slide.bookmarked_at)
+        td= l(slide.published_at.to_date)
 
 .nav
   - if @date
