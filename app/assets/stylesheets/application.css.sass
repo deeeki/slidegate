@@ -2,3 +2,44 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap"
+
+body
+  padding-bottom: 40px
+
+.navbar-wrapper
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  z-index: 20
+  .container
+    padding-right: 0
+    padding-left: 0
+  .navbar
+    padding-right: 15px
+    padding-left: 15px
+
+.carousel
+  height: 400px
+  margin-bottom: 60px
+
+.carousel .item
+  height: 400px
+  background-color: #777
+
+@media (min-width: 768px)
+  .navbar-wrapper
+    margin-top: 20px
+    .container
+      padding-right: 15px
+      padding-left: 15px
+    .navbar
+      padding-right: 0
+      padding-left: 0
+      border-radius: 4px
+  .carousel-caption p
+    margin-bottom: 20px
+    font-size: 21px
+    line-height: 1.4

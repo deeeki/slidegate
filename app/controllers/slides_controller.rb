@@ -6,6 +6,7 @@ class SlidesController < ApplicationController
       @slides = Slide.bookmarked_on(@date).order(bookmarks_count: :desc)
     else
       @slides = Slide.order(bookmarked_at: :desc).limit(50)
+      render :home
     end
   end
 

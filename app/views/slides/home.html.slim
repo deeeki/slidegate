@@ -1,0 +1,12 @@
+.carousel
+  .carousel-inner
+    .item.active
+      .container
+        .carousel-caption
+          h1 Slidegate
+          p
+            | Slidegate is a collection of valuable slides on the web.
+            br
+            | You can get fresh knowledge everyday. Enjoy!
+          p
+            = link_to "Check Today's Slides", l(Date.today, format: :link), class: 'btn btn-lg btn-primary', role: 'button'

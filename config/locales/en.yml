@@ -4,6 +4,7 @@ en:
       default: ! '%Y-%m-%d'
       long: ! '%B %d, %Y'
       short: ! '%b %d'
+      link: ! '/%Y/%m/%d'
   time:
     formats:
       default: ! '%Y-%m-%d %H:%M'

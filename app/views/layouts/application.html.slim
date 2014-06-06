@@ -7,4 +7,27 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    .navbar-wrapper
+      .container
+        .navbar.navbar-inverse.navbar-static-top[role="navigation"]
+          .container
+            .navbar-header
+              button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+                span.sr-only
+                  | Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              = link_to 'Slidegate', '/', class: 'navbar-brand'
+            .navbar-collapse.collapse
+              ul.nav.navbar-nav
+                li
+                  = link_to 'today', l(Date.today, format: :link)
+
     = yield
+
+    .container
+      footer
+        p.pull-right
+          a[href="#"]
+            | Back to top
