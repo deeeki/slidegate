@@ -10,6 +10,9 @@ class Slide
     from = on.to_time.beginning_of_day
     where(:bookmarked_at.gte => from, :bookmarked_at.lte => from.end_of_day)
   }
+  scope :bookmarked_within, ->(from, to = Time.now) {
+    where(:bookmarked_at.gte => from, :bookmarked_at.lte => to)
+  }
 
   class << self
     def new_from_entry entry
