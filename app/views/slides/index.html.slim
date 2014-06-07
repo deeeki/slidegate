@@ -2,9 +2,4 @@ h1 Slides Bookmarked on #{l(@date)}
 
 = render 'slides/slides', slides: @slides
 
-.nav.text-center
-  = daily_link_on(@date - 1.day)
-  |--
-  = daily_link_on(@date)
-  |--
-  = daily_link_on(@date + 1.day)
+= daily_pager_on(@date)
