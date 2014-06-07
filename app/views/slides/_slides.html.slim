@@ -14,6 +14,6 @@
           td= slide.site_name
           td= link_to slide.title, slide.url
           td= slide.author_name
-          td.text-right= slide.bookmarks_count
+          td= bookmark_link(slide)
           td= l(slide.bookmarked_at)
           td= l(slide.published_at.to_date)
