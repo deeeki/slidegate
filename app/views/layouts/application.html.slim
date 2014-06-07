@@ -24,7 +24,9 @@ html
                 li
                   = link_to 'today', l(Date.today, format: :link)
 
-    = yield
+    = yield :header
+    .container.contents
+      = yield
 
     .container
       footer

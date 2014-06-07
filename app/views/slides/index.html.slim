@@ -1,33 +1,10 @@
-- if @date
-  h1 Slides bookmarked on #{l(@date)}
-- else
-  h1 Recent bookmarked slides
+h1 Slides bookmarked on #{l(@date)}
 
-table
-  thead
-    tr
-      th Site
-      th Title
-      th Author
-      th Bookmark
-      th Bookmarked at
-      th Published at
-  tbody
-    - @slides.each do |slide|
-      tr
-        td= slide.site_name
-        td= link_to slide.title, slide.url
-        td= slide.author_name
-        td= slide.bookmarks_count
-        td= l(slide.bookmarked_at)
-        td= l(slide.published_at.to_date)
+= render 'slides/slides', slides: @slides
 
-.nav
-  - if @date
-    = daily_link_on(@date - 1.day)
-    |--
-    = daily_link_on(@date)
-    |--
-    = daily_link_on(@date + 1.day)
-  - else
-    = daily_link_on(Date.today)
+.nav.text-center
+  = daily_link_on(@date - 1.day)
+  |--
+  = daily_link_on(@date)
+  |--
+  = daily_link_on(@date + 1.day)

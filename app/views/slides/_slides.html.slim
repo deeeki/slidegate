@@ -1,0 +1,19 @@
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        th Site
+        th Title
+        th Author
+        th Bookmark
+        th(style="width: 12%") Bookmarked at
+        th(style="width: 10%") Published at
+    tbody
+      - slides.each do |slide|
+        tr
+          td= slide.site_name
+          td= link_to slide.title, slide.url
+          td= slide.author_name
+          td.text-right= slide.bookmarks_count
+          td= l(slide.bookmarked_at)
+          td= l(slide.published_at.to_date)
