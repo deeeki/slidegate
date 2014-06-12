@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 
-gem 'mongoid', github: 'mongoid/mongoid', ref: 'f9e6fdb'
+gem 'mongoid', github: 'mongoid/mongoid'
 gem 'mechanize'
 gem 'slim-rails'
 gem 'slideshare', github: 'deeeki/slideshare'
