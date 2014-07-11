@@ -10,7 +10,7 @@ class Collector
 
   def collect options = {}
     Hateb::EntryList.fetch(@site_url, options).each do |entry|
-      save(entry) if @model_class.valid_url?(entry.url) && !@model_class.where(url: entry.url).exists?
+      save(entry) if @model_class.url_valid?(entry.url) && !@model_class.where(url: entry.url).exists?
     end
   end
 

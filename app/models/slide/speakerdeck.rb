@@ -4,7 +4,7 @@ class Slide::Speakerdeck < Slide
       @agent ||= Mechanize.new
     end
 
-    def valid_url? url
+    def url_valid? url
       return false if url.include?('sssslide.com')
       url =~ /speakerdeck.com\/(u\/)?[^\/]{2,}\/(p\/)?[^\/]+$/ && url !~ /speakerdeck.com\/(embed|player)\//
     end
