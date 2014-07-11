@@ -1,8 +1,7 @@
 class Slide::Slideshare < Slide
   class << self
     def url_valid? url
-      return false if url.include?('sssslide.com')
-      url =~ /www.slideshare.net\/[^\/]+\/[^\/]+$/ && url !~ /www.slideshare.net\/search\//
+      url =~ %r[\Ahttps+://www\.slideshare\.net/[^/]+/[^/]+\z] && url !~ %r[www\.slideshare\.net/search/]
     end
   end
 
