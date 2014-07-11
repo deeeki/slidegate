@@ -5,7 +5,7 @@ class Slide::Speakerdeck < Slide
     end
 
     def url_valid? url
-      url =~ %r[\Ahttps+://speakerdeck\.com/(u/)?[^/]{2,}/(p/)?[^/]+\z] && url !~ %r[speakerdeck\.com/(embed|player)/]
+      !!(url =~ %r[\Ahttps+://speakerdeck\.com/(u/)?[^/]{2,}/(p/)?[^/]+\z] && url !~ %r[speakerdeck\.com/(embed|player)/])
     end
   end
 
