@@ -18,7 +18,10 @@ class Collector
     slide = @model_class.new_from_entry(entry)
     slide.fetch
     slide.save
+  rescue Mechanize::ResponseCodeError => e # speakerdeck 404
+    Rails.logger.error(e)
   rescue => e
     ExceptionNotifier.notify_exception(e, data: { entry: entry, slide: slide })
+    exit if e.kind_of? OpenURI::HTTPError # slideshare api 404
   end
 end
