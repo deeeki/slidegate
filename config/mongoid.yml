@@ -4,30 +4,31 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  sessions:
+  clients:
     default:
+      database: slidegate_development
       hosts:
         - localhost:27017
-      database: slidegate_development
 
 test:
   <<: *defaults
-  sessions:
+  clients:
     default:
+      database: slidegate_test
       hosts:
         - localhost:27017
-      database: slidegate_test
       options:
-        read: primary
-        max_retries: 1
-        retry_interval: 0
+        read:
+          mode: primary
+        max_pool_size: 1
 
 production:
   <<: *defaults
-  sessions:
+  clients:
     default:
+      database: <%= ENV['DB_NAME'] %>
       hosts:
         - <%= ENV['DB_HOST'] %>
-      database: <%= ENV['DB_NAME'] %>
-      username: <%= ENV['DB_USER'] %>
-      password: <%= ENV['DB_PASS'] %>
+      options:
+        user: <%= ENV['DB_USER'] %>
+        password: <%= ENV['DB_PASS'] %>
