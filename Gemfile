@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 
-gem 'mongoid'
+gem 'mongoid', '5.0.0.beta'
 gem 'mechanize'
 gem 'slim-rails'
 gem 'slideshare', github: 'deeeki/slideshare'
