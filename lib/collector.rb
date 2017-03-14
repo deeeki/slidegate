@@ -21,6 +21,7 @@ class Collector
   rescue Mechanize::ResponseCodeError => e # speakerdeck 404
     Rails.logger.error(e)
   rescue => e
+    return if e.message == 'SlideShow Not Found' # slideshare 404
     ExceptionNotifier.notify_exception(e, data: { entry: entry, slide: slide })
     exit if e.kind_of? OpenURI::HTTPError # slideshare api 404
   end
